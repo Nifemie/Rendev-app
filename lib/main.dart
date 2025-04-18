@@ -13,8 +13,6 @@ class LoginPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController firstnameController = TextEditingController();
-  final TextEditingController lastnameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +42,7 @@ class LoginPage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'WELCOME BACK',
+                        'WELCOME TO RENDEV',
                         style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.bold,
@@ -78,39 +76,13 @@ class LoginPage extends StatelessWidget {
                                 value!.isEmpty ? 'Enter your password' : null,
                       ),
                       const SizedBox(height: 24),
-                      TextFormField(
-                        controller: firstnameController,
-                        decoration: const InputDecoration(
-                          labelText: 'FirstName',
-                          prefixIcon: Icon(Icons.person),
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.name,
-                        validator:
-                            (value) =>
-                                value!.isEmpty ? 'Enter your firstname' : null,
-                      ),
-                      const SizedBox(height: 16),
-                      TextFormField(
-                        controller: lastnameController,
-                        decoration: const InputDecoration(
-                          labelText: 'LastName',
-                          prefixIcon: Icon(Icons.person),
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.name,
-                        validator:
-                            (value) =>
-                                value!.isEmpty ? 'Enter your lastname' : null,
-                      ),
-                      const SizedBox(height: 16),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               print(
-                                'Email: ${emailController.text}, Password: ${passwordController.text},name: ${firstnameController.text},name: ${lastnameController.text},',
+                                'Email: ${emailController.text}, Password: ${passwordController.text}',
                               );
                             }
                           },
